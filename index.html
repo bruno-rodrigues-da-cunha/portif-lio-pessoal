@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt.br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio pessoal</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="particulas"></div>
+
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Inicio</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contatos</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/foto-perfil.jpg" alt="Foto de bruno Rodrigues" class="foto-perfil">
+        <h1>Bruno Rodrigues</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Full Stack</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">Olá Sou Bruno Rodrigues Tenho 35 anos profissional em transição de carreira para área dá Programação, desenvolvedor web focado em full Stack apaixonado por criar interfaces intuitivas,responsivas e acessíveis.Tenho experiência com Html,Css,e JavaScript,e busco sempre alinhar design e performace.</p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="./img/imagem5.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Spotify</h3>
+                    <p class="paragrafo-projetos">Desenvolvi uma aplicação Inspirada no Spotify com objetivo de aprimorar minhas habilidades em [HTML,CSS e JAVASCRIPT]</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/imagem2.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Nike</h3>
+                    <p class="paragrafo-projetos">desenvolvi uma landing page interativa inspirada na marca Nike,com foco na apresentação de um produto visualmente atraente e responsiva. O projeto foi construído com HTML semântico, estilizado com CSS moderno (incluindo Flexbox e/Grid), e conta com interações dinâmicas via JavaScript, como trocar de imagem ao selecionar diferentes cores do tênis, efeitos de rolagem e menu responsivel</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/imagem6.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Airbnb</h3>
+                    <p class="paragrafo-projetos">Este projeto é uma réplica da página inicial do site Airbnb, desenvolvida com foco em aprimorar minhas habilidades em HTML5, CSS3 e Flexbox. O objetivo foi praticar a construção de layouts responsivos e alinhamento de elementos utilizando apenas tecnologias front-end puras, sem o uso de frameworks</p>
+                </div>
+            </div>
+
+              <div class="projetos-card">
+                <img src="./img/imagem7.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Chat Fake</h3>
+                    <p class="paragrafo-projetos">Este projeto foi uma ótima oportunidade para treinar e aprofundar meus conhecimentos em HTML,CSS e especialmente no uso do Flexbox para construção de layouts. A ideia foi criar interface visual de um aplicativo de mensagem, simulando uma experiência real de chat - com avatares, balões de conversas,barra lateral e área de digitação.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contatos</h2>
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar Whatzap</button>
+        </form>
+
+    </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault()
+
+            const nome = document.getElementById("nome.value");
+            const mensagem = document.getElementById("mensagem.value");
+            const telefone = '+5562993786022'
+
+            const texto = `Olá! Me chamo Bruno ${nome}, Em que posso ajudar! ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto);
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+            window.open(url, '_blank')
+        }
+
+    </script>
+
+</body>
+
+</html>
